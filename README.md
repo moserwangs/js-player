@@ -25,3 +25,5 @@
 `8.`[实现LRU缓存函数](core/8.实现LRU缓存函数/learn.md)
 
 `9.`[实现防抖函数debounce](core/9.实现防抖函数debounce/learn.md)
+
+`10.`[实现节流函数throttle](core/10.实现节流函数throttle/learn.md)
