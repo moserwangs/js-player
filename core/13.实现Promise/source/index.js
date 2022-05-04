@@ -10,6 +10,8 @@ class Promise {
         this.status = PENDING // 默认状态
         this.value = undefined // 成功的值
         this.reason = undefined // 失败的原因
+        this.onFulfilledCallbacks = [] // 存放成功的回调方法
+        this.onRejectedCallbacks = [] // 存放失败的回调方法
 
         // 改变状态为成功态并设置成功值的方法
         const resolve = (value) => {
@@ -17,6 +19,8 @@ class Promise {
             if (this.status === PENDING) {
                 this.value = value
                 this.status = FULFILLED
+                // 遍历执行成功队列的回调方法
+                this.onFulfilledCallbacks.forEach(fn => fn())
             }
         }
 
@@ -26,6 +30,8 @@ class Promise {
             if (this.status === PENDING) {
                 this.reason = reason
                 this.status = REJECTED
+                // 遍历执行失败队列的回调方法
+                this.onRejectedCallbacks.forEach(fn => fn())
             }
         }
         // 立即执行执行器，执行器执行报错直接调用reject
@@ -37,6 +43,13 @@ class Promise {
     }
     // 两个参数分别为成功的回调与失败的回调
     then(onFulfilled, onRejected) {
+        // 如果状态为PENDING，说明是异步调用成功或失败
+        if (this.status === PENDING) {
+            // 将成功回调存入队列
+            this.onFulfilledCallbacks.push(() => { onFulfilled(this.value) })
+            // 将失败回调存入队列
+            this.onRejectedCallbacks.push(() => { onRejected(this.reason) })
+        }
         // 如果状态为FULFILLED，执行成功的回调方法
         if (this.status === FULFILLED) {
             onFulfilled(this.value)
