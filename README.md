@@ -23,3 +23,5 @@
 `7.`[实现发布订阅模式](core/7.实现发布订阅模式/learn.md)
 
 `8.`[实现LRU缓存函数](core/8.实现LRU缓存函数/learn.md)
+
+`9.`[实现防抖函数debounce](core/9.实现防抖函数debounce/learn.md)
