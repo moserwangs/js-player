@@ -31,3 +31,5 @@
 `11.`[实现JSONP](core/11.实现JSONP/learn.md)
 
 `12.`[实现AJAX](core/12.实现AJAX/learn.md)
+
+`13.`[实现Promise](core/13.实现Promise/learn.md)
