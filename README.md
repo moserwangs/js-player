@@ -29,3 +29,5 @@
 `10.`[实现节流函数throttle](core/10.实现节流函数throttle/learn.md)
 
 `11.`[实现JSONP](core/11.实现JSONP/learn.md)
+
+`12.`[实现JSONP](core/12.实现AJAX/learn.md)
