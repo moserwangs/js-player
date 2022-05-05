@@ -33,3 +33,5 @@
 `12.`[实现AJAX](core/12.实现AJAX/learn.md)
 
 `13.`[实现Promise](core/13.实现Promise/learn.md)
+
+`14.`[实现Redux](core/14.实现Redux/learn.md)
